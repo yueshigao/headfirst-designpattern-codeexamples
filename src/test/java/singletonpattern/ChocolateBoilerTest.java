@@ -11,6 +11,7 @@ class ChocolateBoilerTest {
 
         chocolateBoiler.fill();
         chocolateBoiler.boil();
+        chocolateBoiler.fill();
         chocolateBoiler.drain();
     }
 }
