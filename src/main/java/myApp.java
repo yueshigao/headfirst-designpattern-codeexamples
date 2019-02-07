@@ -1,4 +1,4 @@
-import singletonpattern.ChocolateBoiler;
+import E_singletonpattern.ChocolateBoiler;
 
 public class myApp {
 
