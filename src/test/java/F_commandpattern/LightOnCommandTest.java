@@ -3,6 +3,7 @@ package F_commandpattern;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.contrib.java.lang.system.SystemOutRule;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 
@@ -20,10 +21,26 @@ public class LightOnCommandTest {
 
         // WHEN
         simpleRemoteControl.setCommand(lightOnCommand);
-        simpleRemoteControl.buttonOnWasPressed();
+        simpleRemoteControl.buttonWasPressed();
 
         // THEN
         assertThat("Light is On").containsSubsequence(systemOutRule.getLog());
     }
+
+    @Test
+    public void should_open_the_garage_door() {
+        // GIVEN
+        SimpleRemoteControl simpleRemoteControl = new SimpleRemoteControl();
+        GarageDoor garageDoor = new GarageDoor();
+        Command command = new GarageDoorOpenCommand(garageDoor);
+
+        // WHEN
+        simpleRemoteControl.setCommand(command);
+        simpleRemoteControl.buttonWasPressed();
+
+        // THEN
+        assertThat("Garage door is open!").containsSubsequence(systemOutRule.getLog());
+    }
+
 
 }
