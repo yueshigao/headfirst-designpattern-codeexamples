@@ -10,14 +10,12 @@ public class ChocolateBoiler {
     private boolean empty;
     private boolean boiled;
 
-    /**Si une variable n'est pas déclarée volatile,
-     * chaque thread verra potentiellement une valeur différente de la variable si celle-ci change.
-     * En effet, chaque thread à son propre contexte d'exécution (stack).
-     * volatile concerne la VISIBILITE de la valeur d'une variable par plusieurs threads(c'est le point à retenir).
-     * Si une variable est volatile tous les threads verront la nouvelle valeur de cette variable si celle-ci change.
-     *
-     *
-     * when uniqueInstance is initiated, volatile ensures multiple thread manage correctly this instance**/
+    /**
+     * volatile: concerne la VISIBILITE de la valeur d'une variable par plusieurs threads.
+     * Thread: En effet, chaque thread à son propre contexte d'exécution (stack).
+     * volatile variable changed: tous les threads verront la nouvelle valeur de cette variable (here: uniqueInstance)
+     * non-volatile variable changed: chaque thread verra potentiellement une valeur différente de la variable
+     **/
     private volatile static ChocolateBoiler uniqueInstance;
 
     private ChocolateBoiler() {
@@ -25,11 +23,17 @@ public class ChocolateBoiler {
         this.boiled = false;
     }
 
-    /**double-checked locking**/
+    /**
+     * double-checked locking
+     * advantage 1: synchronized block only execute 1st time, instead synchronized getInstance()(synchronized all the time)
+     * advantage 2: lazy instantiation (instance when needed), instead uniqueInstance = new xx()(Eager instantiation, if variable not needed in this execution, a waste)
+     **/
     public static ChocolateBoiler getInstance() {
-
+        /**1st check: only entry into the synchronized block when not null **/
         if (uniqueInstance == null) {
+            /**synchronized block only execute 1st time: performance+**/
             synchronized (ChocolateBoiler.class) {
+                /**2nd check: if null, initiate -- lazy instantiation (instance when needed)**/
                 if (uniqueInstance == null) {
                     uniqueInstance = new ChocolateBoiler();
                 }
