@@ -3,7 +3,7 @@ package D_factorypattern.bFactoryMethodPattern.products;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Pizza {
+public abstract class  Pizza {
 
     String name;
     String dough;

@@ -17,7 +17,32 @@ public class PizzaStore {
 
     public Pizza orderPizza(String type){
 
-        Pizza pizza = null;
+        Pizza pizza = new Pizza() {
+            @Override
+            public void prepare() {
+                super.prepare();
+            }
+
+            @Override
+            public void bake() {
+                super.bake();
+            }
+
+            @Override
+            public void cut() {
+                super.cut();
+            }
+
+            @Override
+            public void box() {
+                super.box();
+            }
+
+            @Override
+            public String getName() {
+                return super.getName();
+            }
+        };
 
         if(Type.CHEESE.toString().equals(type)){
             pizza = new CheesePizza();
@@ -32,12 +57,10 @@ public class PizzaStore {
            pizza = new VeggiePizza();
         }
 
-        if (pizza != null) {
-            pizza.prepare();
-            pizza.bake();
-            pizza.cut();
-            pizza.box();
-        }
+        pizza.prepare();
+        pizza.bake();
+        pizza.cut();
+        pizza.box();
 
         return pizza;
     }
