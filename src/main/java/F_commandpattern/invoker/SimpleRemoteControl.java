@@ -1,5 +1,8 @@
-package F_commandpattern;
+package F_commandpattern.invoker;
 
+import F_commandpattern.commands.Command;
+
+/**Invoker object setCommand() and execute() when time arriving **/
 public class SimpleRemoteControl {
 
     Command slot;

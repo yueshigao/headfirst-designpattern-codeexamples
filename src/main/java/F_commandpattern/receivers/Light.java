@@ -1,4 +1,4 @@
-package F_commandpattern;
+package F_commandpattern.receivers;
 
 public class Light {
 
