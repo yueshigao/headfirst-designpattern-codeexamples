@@ -2,8 +2,17 @@ package F_commandpattern.receivers;
 
 public class Light {
 
-    public void on() {
-        System.out.print("Light is On");
+    String place;
+
+    public Light(String place) {
+        this.place = place;
     }
 
+    public void on() {
+        System.out.print(place + " Light is On");
+    }
+
+    public void off() {
+        System.out.print(place + " Light is off");
+    }
 }

@@ -22,7 +22,7 @@ public class SimpleRemoteControlTest {
     public void should_turn_on_the_light() {
         // GIVEN
         SimpleRemoteControl simpleRemoteControl = new SimpleRemoteControl();
-        Light light = new Light();
+        Light light = new Light("Living room");
         Command lightOnCommand = new LightOnCommand(light);
 
         // WHEN

@@ -19,21 +19,22 @@ public class RemoteControl {
      * instantiate each field to an empty instance to avoid null exception
      **/
     public RemoteControl() {
-        onCommands = new ArrayList<Command>();
-        offCommands = new ArrayList<Command>();
+        onCommands = new ArrayList<>();
+        offCommands = new ArrayList<>();
 
         /**new NoCommand(): an empty class**/
         final Command noCommand = new NoCommand();
 
-        /**stream foreach to replace traditional foreach**/
-        onCommands.stream().map(onCommand -> noCommand)
-                .forEach(onCommand -> onCommands.add(onCommand));
-        offCommands.stream().map(offCommand -> noCommand)
-                .forEach(offCommand -> offCommands.add(noCommand));
+        /**you cannot use forEach of a list to initiate this List**/
+        for (int i = 0; i < 7; i++) {
+            onCommands.add(noCommand);
+            offCommands.add(noCommand);
+        }
     }
 
-    public void setCommands(Command onCommands) {
-
+    public void setCommands(int slot, Command onCommand, Command offCommand) {
+        onCommands.set(slot,onCommand);
+        offCommands.set(slot,offCommand);
     }
 
     public void buttonsOnPressed(int slot) {
@@ -42,5 +43,22 @@ public class RemoteControl {
 
     public void buttonsOffPressed(int slot) {
         offCommands.get(slot).execute();
+    }
+
+   /* @Override
+    public String toString() {
+        StringBuffer stringBuffer = new StringBuffer();
+
+        stringBuffer.append("\n----------- Remote Control --------\n");
+
+        return stringBuffer.toString();
+    }*/
+
+    @Override
+    public String toString() {
+        return "RemoteControl{" +
+                "onCommands=" + onCommands +
+                ", offCommands=" + offCommands +
+                '}';
     }
 }
