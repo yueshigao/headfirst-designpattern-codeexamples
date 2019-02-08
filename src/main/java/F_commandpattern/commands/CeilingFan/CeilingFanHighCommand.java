@@ -13,5 +13,4 @@ public class CeilingFanHighCommand extends CeilingFanCommand {
         speed = ceilingFan.getSpeed();
         ceilingFan.high();
     }
-
 }
