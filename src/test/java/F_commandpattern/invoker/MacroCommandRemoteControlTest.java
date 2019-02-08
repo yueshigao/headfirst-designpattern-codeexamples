@@ -1,6 +1,10 @@
 package F_commandpattern.invoker;
 
 import F_commandpattern.commands.*;
+import F_commandpattern.commands.Light.LightOffCommand;
+import F_commandpattern.commands.Light.LightOnCommand;
+import F_commandpattern.commands.Stereo.StereoOffCommand;
+import F_commandpattern.commands.Stereo.StereoOnWithCDCommand;
 import F_commandpattern.receivers.Light;
 import F_commandpattern.receivers.Stereo;
 import org.junit.Test;

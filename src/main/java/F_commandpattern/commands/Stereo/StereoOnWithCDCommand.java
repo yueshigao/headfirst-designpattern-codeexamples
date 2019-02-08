@@ -1,5 +1,6 @@
-package F_commandpattern.commands;
+package F_commandpattern.commands.Stereo;
 
+import F_commandpattern.commands.Command;
 import F_commandpattern.receivers.Stereo;
 
 public class StereoOnWithCDCommand implements Command {

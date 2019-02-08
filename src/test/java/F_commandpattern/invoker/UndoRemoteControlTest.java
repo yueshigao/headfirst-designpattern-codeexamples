@@ -2,6 +2,8 @@ package F_commandpattern.invoker;
 
 
 import F_commandpattern.commands.*;
+import F_commandpattern.commands.Light.LightOffCommand;
+import F_commandpattern.commands.Light.LightOnCommand;
 import F_commandpattern.receivers.Light;
 import org.junit.Test;
 

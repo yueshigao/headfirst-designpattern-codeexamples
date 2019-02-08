@@ -1,4 +1,4 @@
-package F_commandpattern.commands;
+package F_commandpattern.commands.CeilingFan;
 
 import F_commandpattern.receivers.CeilingFan;
 

@@ -1,5 +1,6 @@
-package F_commandpattern.commands;
+package F_commandpattern.commands.CeilingFan;
 
+import F_commandpattern.commands.Command;
 import F_commandpattern.receivers.CeilingFan;
 
 public abstract class CeilingFanCommand implements Command {

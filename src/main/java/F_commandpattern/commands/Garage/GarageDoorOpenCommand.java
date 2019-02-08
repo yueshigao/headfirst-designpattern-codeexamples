@@ -1,5 +1,6 @@
-package F_commandpattern.commands;
+package F_commandpattern.commands.Garage;
 
+import F_commandpattern.commands.Command;
 import F_commandpattern.receivers.GarageDoor;
 
 public class GarageDoorOpenCommand implements Command {

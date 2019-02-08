@@ -1,5 +1,6 @@
-package F_commandpattern.commands;
+package F_commandpattern.commands.Light;
 
+import F_commandpattern.commands.Command;
 import F_commandpattern.receivers.Light;
 
 import java.util.List;

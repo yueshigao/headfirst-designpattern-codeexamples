@@ -1,8 +1,8 @@
 package F_commandpattern.invoker;
 
 import F_commandpattern.commands.Command;
-import F_commandpattern.commands.GarageDoorOpenCommand;
-import F_commandpattern.commands.LightOnCommand;
+import F_commandpattern.commands.Garage.GarageDoorOpenCommand;
+import F_commandpattern.commands.Light.LightOnCommand;
 import F_commandpattern.receivers.GarageDoor;
 import F_commandpattern.receivers.Light;
 import org.junit.Rule;

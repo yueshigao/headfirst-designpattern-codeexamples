@@ -2,6 +2,9 @@ package F_commandpattern.invoker;
 
 
 import F_commandpattern.commands.*;
+import F_commandpattern.commands.CeilingFan.CeilingFanHighCommand;
+import F_commandpattern.commands.CeilingFan.CeilingFanMediumCommand;
+import F_commandpattern.commands.CeilingFan.CeilingFanOffCommand;
 import F_commandpattern.receivers.CeilingFan;
 import org.junit.Test;
 
@@ -11,7 +14,7 @@ public class RecordStateUndoRemoteControlTest {
     public void should_undo_remote_control_with_recorded_high_speed(){
         /**Receiver**/
         CeilingFan ceilingFan = new CeilingFan();
-        
+
         /**Command: encapsulate receiver**/
         Command ceilingFanHighCommand = new CeilingFanHighCommand(ceilingFan);
         Command ceilingFanMediumCommand = new CeilingFanMediumCommand(ceilingFan);
