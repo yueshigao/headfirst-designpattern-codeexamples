@@ -13,6 +13,7 @@ public class RemoteControl {
 
     List<Command> onCommands;
     List<Command> offCommands;
+    Command undoCommand;
 
     /**
      * Null object Pattern:
@@ -30,19 +31,28 @@ public class RemoteControl {
             onCommands.add(noCommand);
             offCommands.add(noCommand);
         }
+        undoCommand = noCommand;
     }
 
-    public void setCommands(int slot, Command onCommand, Command offCommand) {
-        onCommands.set(slot,onCommand);
-        offCommands.set(slot,offCommand);
+    public void setCommand(int slot, Command onCommand, Command offCommand) {
+        onCommands.set(slot, onCommand);
+        offCommands.set(slot, offCommand);
     }
 
-    public void buttonsOnPressed(int slot) {
+    public void buttonOnPressed(int slot) {
         onCommands.get(slot).execute();
+        /**save the last command "used" in the undo object
+         * so it should be after execute() - "used"**/
+        undoCommand = onCommands.get(slot);
     }
 
-    public void buttonsOffPressed(int slot) {
+    public void buttonOffPressed(int slot) {
         offCommands.get(slot).execute();
+        undoCommand = offCommands.get(slot);
+    }
+
+    public void buttonUndoPressed() {
+        undoCommand.undo();
     }
 
     @Override
@@ -54,10 +64,15 @@ public class RemoteControl {
         for (int i = 0; i < 7; i++) {
             stringBuffer.append("slot [" + i + "]: "
                     + onCommands.get(i).getClass().getSimpleName()
-                    +"            "
+                    + "            "
                     + offCommands.get(i).getClass().getSimpleName()
                     + "\n");
         }
+
+        stringBuffer.append("slot [undo]: "
+                + undoCommand.getClass().getSimpleName());
+
+        stringBuffer.append("\n----------- End Remote Control --------\n");
 
         return stringBuffer.toString();
 

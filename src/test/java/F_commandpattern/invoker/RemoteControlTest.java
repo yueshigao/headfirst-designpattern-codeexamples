@@ -9,7 +9,7 @@ import org.junit.Test;
 public class RemoteControlTest {
 
     @Test
-    public void should_run_remotre_control(){
+    public void should_run_remote_control(){
         RemoteControl remoteControl = new RemoteControl();
 
         Light livingRoomLight = new Light("Living Room");
@@ -18,21 +18,21 @@ public class RemoteControlTest {
 
         Command livingRoomLightOn = new LightOnCommand(livingRoomLight);
         Command livingRoomLightoff = new LightOffCommand(livingRoomLight);
-        remoteControl.setCommands(0,livingRoomLightOn,livingRoomLightoff);
+        remoteControl.setCommand(0,livingRoomLightOn,livingRoomLightoff);
 
         Command kitchenLightOn = new LightOnCommand(kitchenLight);
         Command kitchenLightOff = new LightOffCommand(kitchenLight);
-        remoteControl.setCommands(1,kitchenLightOn, kitchenLightOff);
+        remoteControl.setCommand(1,kitchenLightOn, kitchenLightOff);
 
         Command steroOnWithCD = new StereoOnWithCDCommand(stereo);
         Command steroOff = new NoCommand();
-        remoteControl.setCommands(2,steroOnWithCD,steroOff);
+        remoteControl.setCommand(2,steroOnWithCD,steroOff);
 
         System.out.println(remoteControl);
 
         for (int i = 0; i <3 ; i++) {
-            remoteControl.buttonsOnPressed(i);
-            remoteControl.buttonsOffPressed(i);
+            remoteControl.buttonOnPressed(i);
+            remoteControl.buttonOffPressed(i);
         }
     }
 

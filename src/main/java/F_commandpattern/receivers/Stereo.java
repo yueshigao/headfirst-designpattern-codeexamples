@@ -21,4 +21,7 @@ public class Stereo {
     }
 
 
+    public void off() {
+        System.out.println(place + " stereo off");
+    }
 }
