@@ -1,14 +1,15 @@
 package I_iteratorpattern.client;
 
 import I_iteratorpattern.aggregate.Menu;
+import I_iteratorpattern.aggregate.collectionitem.MenuItem;
 
 import java.util.Iterator;
 
 public class Waitress {
 
-    Menu pancakeHouseMenu;
-    Menu dinerMenu;
-    Menu cafeMenu;
+    private Menu pancakeHouseMenu;
+    private Menu dinerMenu;
+    private Menu cafeMenu;
 
     public Waitress(Menu pancakeHouseMenu, Menu dinerMenu, Menu cafeMenu) {
         this.pancakeHouseMenu = pancakeHouseMenu;
