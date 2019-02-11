@@ -1,4 +1,7 @@
-package I_iteratorpattern;
+package I_iteratorpattern.aggregate;
+
+import I_iteratorpattern.aggregate.collectionitem.MenuItem;
+import I_iteratorpattern.iterator.*;
 
 import java.util.Iterator;
 

@@ -1,9 +1,11 @@
-package I_iteratorpattern;
+package I_iteratorpattern.iterator;
+
+import I_iteratorpattern.aggregate.collectionitem.MenuItem;
 
 import java.util.Iterator;
 
 public class DinerMenuIterator implements Iterator {
-    MenuItem [] items;
+    MenuItem[] items;
     int position = 0;
 
     public DinerMenuIterator(MenuItem[] list) {

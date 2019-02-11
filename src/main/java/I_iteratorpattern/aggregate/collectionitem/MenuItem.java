@@ -1,4 +1,4 @@
-package I_iteratorpattern;
+package I_iteratorpattern.aggregate.collectionitem;
 
 public class MenuItem {
     String name;
