@@ -1,4 +1,4 @@
-package H_templatemethodpattern;
+package H_templatemethodpattern.beverageExapmle;
 
 public class Tea extends Beverage {
 

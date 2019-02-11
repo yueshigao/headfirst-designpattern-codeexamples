@@ -1,4 +1,4 @@
-package H_templatemethodpattern;
+package H_templatemethodpattern.beverageExapmle;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
