@@ -2,23 +2,31 @@ package H_templatemethodpattern;
 
 public abstract class Beverage {
 
-    final void prepareReceipe(){
+    final void prepareReceipt() {
         boilWater();
         brew();
         pourInCup();
-        addCondiment();
+        /**Hook is a method**/
+        if (clientWantToAddCondiment()) {
+            addCondiment();
+        }
     }
 
-    protected abstract void addCondiment();
+    private void boilWater() {
+        System.out.println("Boiling water...");
+    }
 
-    private final void pourInCup() {
+    abstract void brew();
+
+    private void pourInCup() {
         System.out.println("Pouring in cup!");
     }
 
-    protected abstract void brew();
+    abstract void addCondiment();
 
-    protected final void boilWater() {
-        System.out.println("Boiling water...");
+    /**Hook method: to be overridden or not**/
+    boolean clientWantToAddCondiment() {
+        return true;
     }
 
 }

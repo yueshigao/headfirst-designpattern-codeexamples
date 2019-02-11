@@ -11,10 +11,10 @@ public class BeverageTest {
         Beverage coffee = new Coffee();
 
         System.out.println("\n------Making tea-------");
-        tea.prepareReceipe();
+        tea.prepareReceipt();
 
         System.out.println("\n------Making coffee-------");
-        coffee.prepareReceipe();
+        coffee.prepareReceipt();
     }
 
 }
