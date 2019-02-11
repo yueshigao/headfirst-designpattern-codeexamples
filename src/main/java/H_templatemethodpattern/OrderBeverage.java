@@ -1,12 +1,8 @@
 package H_templatemethodpattern;
 
-import org.junit.Test;
+public class OrderBeverage {
 
-public class BeverageTest {
-
-    @Test
-    public void should_making_beverage(){
-
+    public static void main(String[] args) {
         Beverage tea = new Tea();
         Beverage coffee = new Coffee();
 
@@ -16,5 +12,4 @@ public class BeverageTest {
         System.out.println("\n------Making coffee-------");
         coffee.prepareReceipt();
     }
-
 }
