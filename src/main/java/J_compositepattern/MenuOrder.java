@@ -1,8 +1,8 @@
 package J_compositepattern;
 
 import J_compositepattern.a_component.MenuComponent;
-import J_compositepattern.b_compositeNode.Menu;
-import J_compositepattern.c_leaf.MenuItem;
+import J_compositepattern.b_compositeNode.aggregate.Menu;
+import J_compositepattern.c_leaf.aggregate.MenuItem;
 import J_compositepattern.d_client.Waitress;
 
 public class MenuOrder {
@@ -55,7 +55,7 @@ public class MenuOrder {
                 , 1.99));
 
         //3 dinner menu
-        MenuComponent dinnerMenu = new Menu("CAFE MENU","Diner");
+        MenuComponent dinnerMenu = new Menu("CAFE MENU", "Diner");
         allMenus.add(dinnerMenu);
 
         dinnerMenu.add(new MenuItem("Soup of the day"
@@ -64,12 +64,16 @@ public class MenuOrder {
                 , 3.69));
 
         dinnerMenu.add(new MenuItem("Burrito"
-                ,"with whole pinto beans"
-                ,true
-                ,4.29));
+                , "with whole pinto beans"
+                , true
+                , 4.29));
 
-        //Z print
+        //Z: print
         waitress.print();
 
+        //Z: iterate all menus, and pick the vegetarian items
+        System.out.println("\n--------------------------");
+        System.out.println("VEGETARIAN DISHES:");
+        waitress.printVegetarian();
     }
 }

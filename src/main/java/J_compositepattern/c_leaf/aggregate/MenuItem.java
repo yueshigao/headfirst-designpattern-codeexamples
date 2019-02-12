@@ -1,6 +1,9 @@
-package J_compositepattern.c_leaf;
+package J_compositepattern.c_leaf.aggregate;
 
 import J_compositepattern.a_component.MenuComponent;
+import J_compositepattern.c_leaf.iterator.NullIterator;
+
+import java.util.Iterator;
 
 public class MenuItem extends MenuComponent {
     String name;
@@ -41,5 +44,10 @@ public class MenuItem extends MenuComponent {
         if(isVegetarian()) System.out.print("(v)");
         System.out.print(", " + getPrice() + "€");
         System.out.println(" --" + getDescription());
+    }
+
+    @Override
+    public Iterator createIterator() {
+        return new NullIterator();
     }
 }

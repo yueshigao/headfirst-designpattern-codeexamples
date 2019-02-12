@@ -1,5 +1,7 @@
 package J_compositepattern.a_component;
 
+import java.util.Iterator;
+
 public abstract class MenuComponent {
 
     /**
@@ -39,4 +41,6 @@ public abstract class MenuComponent {
     public void print(){
         throw new UnsupportedOperationException();
     }
+
+    public abstract Iterator createIterator();
 }

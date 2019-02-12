@@ -1,6 +1,7 @@
-package J_compositepattern.b_compositeNode;
+package J_compositepattern.b_compositeNode.aggregate;
 
 import J_compositepattern.a_component.MenuComponent;
+import J_compositepattern.b_compositeNode.iterator.CompositeIterator;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -54,5 +55,8 @@ public class Menu extends MenuComponent {
         }
     }
 
-
+    @Override
+    public Iterator createIterator() {
+        return new CompositeIterator(menuComponents.iterator());
+    }
 }
