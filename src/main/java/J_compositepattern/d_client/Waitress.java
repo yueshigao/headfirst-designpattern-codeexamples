@@ -13,16 +13,26 @@ public class Waitress {
         this.allMenus = allMenus;
     }
 
-    public void print(){
+    public void print() {
         allMenus.print();
     }
 
     public void printVegetarian() {
         Iterator iterator = allMenus.createIterator();
-        while (iterator.hasNext()){
+        while (iterator.hasNext()) {
             MenuComponent menuComponent = (MenuComponent) iterator.next();
-            if(menuComponent instanceof MenuItem && menuComponent.isVegetarian())
-                menuComponent.print();
+
+          /*  *//**V1: **//*
+            if (menuComponent instanceof MenuItem && menuComponent.isVegetarian())
+                menuComponent.print();*/
+
+            /**V2: try catch, keep the transparency of Menu/MenuItems
+             * Client don't need to know the class of menuComponent **/
+            try {
+                if (menuComponent.isVegetarian())
+                    menuComponent.print();
+            } catch (UnsupportedOperationException ignored) {
+            }
         }
     }
 }
