@@ -37,9 +37,9 @@ public class MenuItem extends MenuComponent {
 
     @Override
     public void print(){
-        System.out.println(" " + getName());
-        if(isVegetarian()) System.out.println("(v)");
-        System.out.println(", " + getPrice() + "€");
+        System.out.print(" " + getName());
+        if(isVegetarian()) System.out.print("(v)");
+        System.out.print(", " + getPrice() + "€");
         System.out.println(" --" + getDescription());
     }
 }

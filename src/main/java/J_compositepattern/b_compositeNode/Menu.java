@@ -5,8 +5,8 @@ import J_compositepattern.a_component.MenuComponent;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public abstract class Menu extends MenuComponent {
-    ArrayList menuComponets = new ArrayList();
+public class Menu extends MenuComponent {
+    ArrayList menuComponents = new ArrayList();
     String name;
     String description;
 
@@ -15,9 +15,10 @@ public abstract class Menu extends MenuComponent {
         this.description = description;
     }
 
+    /**Pay attention: add to my menu list**/
     @Override
     public void add(MenuComponent menuComponent) {
-        menuComponent.add(menuComponent);
+        menuComponents.add(menuComponent);
     }
 
     @Override
@@ -42,11 +43,11 @@ public abstract class Menu extends MenuComponent {
     }
 
     public void print() {
-        System.out.println("\n" + getName());
+        System.out.print("\n" + getName());
         System.out.println(", " + getDescription());
         System.out.println("---------------------------");
 
-        Iterator iterator = menuComponets.iterator();
+        Iterator iterator = menuComponents.iterator();
         while(iterator.hasNext()) {
             MenuComponent menuComponent = (MenuComponent) iterator.next();
             menuComponent.print();
