@@ -15,7 +15,7 @@ public abstract class MenuComponent {
         throw new UnsupportedOperationException();
     }
 
-    public MenuComponent getChild(MenuComponent menuComponent) {
+    public MenuComponent getChild(int i) {
         throw new UnsupportedOperationException();
     }
 
@@ -38,6 +38,8 @@ public abstract class MenuComponent {
         throw new UnsupportedOperationException();
     }
 
+    /**
+     * "unique" methods**/
     public void print(){
         throw new UnsupportedOperationException();
     }

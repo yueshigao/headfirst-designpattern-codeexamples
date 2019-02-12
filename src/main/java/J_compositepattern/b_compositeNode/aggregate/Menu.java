@@ -28,8 +28,8 @@ public class Menu extends MenuComponent {
     }
 
     @Override
-    public MenuComponent getChild(MenuComponent menuComponent) {
-        MenuComponent child = menuComponent.getChild(menuComponent);
+    public MenuComponent getChild(int i) {
+        MenuComponent child = (MenuComponent)menuComponents.get(i);
         return child;
     }
 
