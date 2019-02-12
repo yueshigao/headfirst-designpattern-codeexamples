@@ -1,3 +1,4 @@
+/*
 package J_compositepattern.kataevaluator.composite;
 
 import J_compositepattern.kataevaluator.Component;
@@ -15,3 +16,4 @@ public class Multiplication extends BinaryOperation {
         return values.stream().reduce((a,b)->a*b).orElse(0.0);
     }
 }
+*/
