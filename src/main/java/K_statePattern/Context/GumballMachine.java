@@ -8,6 +8,7 @@ public class GumballMachine {
     private State hasQuarterState;
     private State soldState;
     private State soldOutState;
+    private State winnerState;
 
     private State currentState;
     private int gumballCount;
@@ -18,6 +19,7 @@ public class GumballMachine {
         hasQuarterState = new HasQuarterState(this);
         soldState = new SoldState(this);
         soldOutState = new SoldOutState(this);
+        winnerState = new WinnerState(this);
 
         this.gumballCount = gumballCount;
         currentState = noQuarterState;
@@ -37,7 +39,7 @@ public class GumballMachine {
 
     public void turnCrank() {
         currentState.turnCrank();
-        if (currentState == soldState) currentState.dispense();
+        if (currentState == soldState || currentState == winnerState) currentState.dispense();
     }
 
     public void releaseBall() {
@@ -70,6 +72,10 @@ public class GumballMachine {
         return gumballCount;
     }
 
+    public State getWinnerState() {
+        return winnerState;
+    }
+
     public void setCurrentState(State currentState) {
         this.currentState = currentState;
     }
@@ -77,10 +83,12 @@ public class GumballMachine {
     @Override
     public String toString() {
         StringBuffer stringBuffer = new StringBuffer();
+        stringBuffer.append("\n------------Begin Inventory-----------------");
         stringBuffer.append("\nMighty Gumball Inc.");
         stringBuffer.append("\nJava-enabled Standing Gumball Model #2004");
-        stringBuffer.append("\nInventory: " + gumballCount + " gumballs\n" );
+        stringBuffer.append("\nInventory: " + gumballCount + " gumballs\n");
         stringBuffer.append(currentState + "\n");
+        stringBuffer.append("------------End Inventory-------------------\n");
 
         return stringBuffer.toString();
     }

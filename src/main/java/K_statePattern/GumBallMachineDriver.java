@@ -5,6 +5,7 @@ import K_statePattern.Context.GumballMachine;
 public class GumBallMachineDriver {
 
     public static void main(String[] args) {
+
         GumballMachine gumballMachine = new GumballMachine(5);
 
         System.out.println(gumballMachine);
@@ -15,15 +16,9 @@ public class GumBallMachineDriver {
         System.out.println(gumballMachine);
 
         gumballMachine.insertQuarter();
-        gumballMachine.returnQuarter();
-
-        System.out.println(gumballMachine);
-
-        gumballMachine.insertQuarter();
         gumballMachine.turnCrank();
         gumballMachine.insertQuarter();
         gumballMachine.turnCrank();
-        gumballMachine.returnQuarter();
 
         System.out.println(gumballMachine);
     }
