@@ -4,7 +4,9 @@ import D_factorypattern.Type;
 import D_factorypattern.bFactoryMethodPattern.products.*;
 
 public class ChicagoPizzaStore extends PizzaStore {
-    Pizza createPizza(String type) {
+
+    public Pizza createPizza(String type) {
+
         Pizza pizza = null;
         if(Type.CHEESE.toString().equals(type)){
             pizza = new ChicagoStyleCheesePizza();
