@@ -10,13 +10,16 @@ public class cafeOrderApp {
 
     public static void main(String[] args) {
 
-        Beverage espresso = new Espresso();
+        Beverage espresso = new Espresso(1);
         System.out.println(espresso.getDescription() + " " + espresso.cost());
 
-        Beverage darkRoast = new DarkRoast();
-        Beverage whipMochaDarkRoast = new Whip(new Mocha(new Mocha(darkRoast)));
-        System.out.println(whipMochaDarkRoast.getDescription() + " " + whipMochaDarkRoast.cost());
+        Beverage whipEspresso = new Whip(espresso);
+        System.out.println(whipEspresso.getDescription()+" "+whipEspresso.cost());
 
+        Beverage darkRoast = new DarkRoast(2);
+        Mocha beverage = new Mocha(new Mocha(darkRoast));
+        Beverage whipMochaDarkRoast = new Whip(beverage);
+        System.out.println(whipMochaDarkRoast.getDescription() + " " + whipMochaDarkRoast.cost());
     }
 
 }

@@ -2,8 +2,9 @@ package C_decoratorPattern.component;
 
 public class Espresso extends Beverage {
 
-    public Espresso() {
+    public Espresso(int size) {
         description = "Espresso";
+        this.size = size;
     }
 
     @Override

@@ -4,10 +4,14 @@ import C_decoratorPattern.component.Beverage;
 
 public class Whip extends CondimentDecorator {
 
-    private final Beverage beverage;
+    private Beverage beverage;
 
     public Whip(Beverage beverage) {
         this.beverage = beverage;
+    }
+
+    public int getSize(){
+        return beverage.getSize();
     }
 
     @Override
@@ -17,6 +21,9 @@ public class Whip extends CondimentDecorator {
 
     @Override
     public double cost() {
-        return beverage.cost() + 0.2;
+        if(getSize()==(Beverage.TALL)) return beverage.cost() + 0.30;
+        if(getSize()==(Beverage.GRANDE)) return beverage.cost() + 0.20;
+        if(getSize()==(Beverage.VENTI)) return beverage.cost() + 0.10;
+        return beverage.cost();
     }
 }

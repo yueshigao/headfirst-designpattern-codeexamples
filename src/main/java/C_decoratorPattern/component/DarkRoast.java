@@ -2,8 +2,9 @@ package C_decoratorPattern.component;
 
 public class DarkRoast extends Beverage {
 
-    public DarkRoast() {
+    public DarkRoast(int size) {
         description = "Dark Roast Coffee";
+        this.size = size;
     }
 
     @Override
