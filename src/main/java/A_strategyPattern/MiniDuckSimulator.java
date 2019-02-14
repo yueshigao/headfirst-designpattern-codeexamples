@@ -1,5 +1,6 @@
 package A_strategyPattern;
 
+import A_strategyPattern.algoFly.FlyRocketPowered;
 import A_strategyPattern.client_ducks.*;
 
 public class MiniDuckSimulator {
@@ -10,5 +11,16 @@ public class MiniDuckSimulator {
         greenDuck.display();
         greenDuck.perfomeQuack();
         greenDuck.performFly();
+
+        System.out.println();
+        Duck modelDuck = new ModelDuck();
+        modelDuck.display();
+        modelDuck.perfomeQuack();
+        modelDuck.performFly();
+
+        System.out.println();
+        System.out.println("Change the fly behavior of the model duck:");
+        modelDuck.setFlyBehavior(new FlyRocketPowered());
+        modelDuck.performFly();
     }
 }
