@@ -6,6 +6,7 @@ import M_compoundPattern.d_duckgoosefactory_abstractFactory.AbstractDuckFactory;
 import M_compoundPattern.d_duckgoosefactory_abstractFactory.AbstractGooseFactory;
 import M_compoundPattern.d_duckgoosefactory_abstractFactory.DuckCountFactory;
 import M_compoundPattern.d_duckgoosefactory_abstractFactory.GooseAdapterFactory;
+import M_compoundPattern.e_duckFlock_composite.Flock;
 
 public class DuckSimulator {
 
@@ -24,11 +25,27 @@ public class DuckSimulator {
         Quackable rubberDuck = duckFactory.createRubberDuck();
         Quackable goose = gooseFactory.createGooseAdapter();
 
-        simulate(mallardDuck);
-        simulate(redHeadDuck);
-        simulate(duckCaller);
-        simulate(rubberDuck);
-        simulate(goose);
+        Flock flockOfDucks = new Flock();
+
+        flockOfDucks.add(mallardDuck);
+        flockOfDucks.add(redHeadDuck);
+        flockOfDucks.add(duckCaller);
+        flockOfDucks.add(rubberDuck);
+        flockOfDucks.add(goose);
+
+        Flock flockOfMallardDuck = new Flock();
+        flockOfMallardDuck.add(mallardDuck);
+        flockOfMallardDuck.add(mallardDuck);
+        flockOfMallardDuck.add(mallardDuck);
+        flockOfMallardDuck.add(mallardDuck);
+
+        flockOfDucks.add(flockOfMallardDuck);
+
+        System.out.println("\nWhole flock Simulation");
+        simulate(flockOfDucks);
+
+        System.out.println("\nMallard Duck flock Simulation");
+        simulate(flockOfMallardDuck);
 
         System.out.println("The ducks quack " + QuackCount.getQuackCount() + " times.");
     }
@@ -37,7 +54,6 @@ public class DuckSimulator {
      * 1.algorithm is encapsulated in the interface implementation
      * 2.only inject the interface into client
      * 3.so the algorithm is interchangeable*/
-
     private void simulate(Quackable quackable) {
         quackable.quack();
     }
