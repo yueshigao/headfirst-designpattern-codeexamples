@@ -17,7 +17,7 @@ public class GooseAdapter implements Quackable {
     @Override
     public void quack() {
         goose.honk();
-        // can not add notifyObservers(); otherwise Observer will be notified twice
+        // can not add notifyObservers(); otherwise WeatherObserver will be notified twice
         // notify is only the real object's job
     }
 
