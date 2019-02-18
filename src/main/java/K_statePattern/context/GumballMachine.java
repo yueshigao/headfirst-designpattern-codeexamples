@@ -1,6 +1,6 @@
-package K_statePattern.Context;
+package K_statePattern.context;
 
-import K_statePattern.State.*;
+import K_statePattern.state.*;
 
 public class GumballMachine {
 
@@ -26,7 +26,7 @@ public class GumballMachine {
     }
 
     /**
-     * State Pattern encapsulate states in object,
+     * state Pattern encapsulate states in object,
      * and use context to delegate the action to the state instance
      **/
     public void insertQuarter() {

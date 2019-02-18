@@ -1,6 +1,6 @@
-package K_statePattern.State;
+package K_statePattern.state;
 
-import K_statePattern.Context.GumballMachine;
+import K_statePattern.context.GumballMachine;
 
 public class SoldState extends State {
 

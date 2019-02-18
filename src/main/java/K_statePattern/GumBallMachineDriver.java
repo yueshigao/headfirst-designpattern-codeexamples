@@ -1,6 +1,6 @@
 package K_statePattern;
 
-import K_statePattern.Context.GumballMachine;
+import K_statePattern.context.GumballMachine;
 
 public class GumBallMachineDriver {
 

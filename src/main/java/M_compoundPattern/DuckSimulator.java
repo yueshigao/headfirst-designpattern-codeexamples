@@ -7,6 +7,7 @@ import M_compoundPattern.d_duckgoosefactory_abstractFactory.AbstractGooseFactory
 import M_compoundPattern.d_duckgoosefactory_abstractFactory.DuckCountFactory;
 import M_compoundPattern.d_duckgoosefactory_abstractFactory.GooseAdapterFactory;
 import M_compoundPattern.e_duckFlock_composite.Flock;
+import M_compoundPattern.f_quackobservable_observator.Observer.Quackologist;
 
 public class DuckSimulator {
 
@@ -41,11 +42,11 @@ public class DuckSimulator {
 
         flockOfDucks.add(flockOfMallardDuck);
 
-        System.out.println("\nWhole flock Simulation");
-        simulate(flockOfDucks);
+        System.out.println("\nDuck Simulator: With Observer");
+        Quackologist quackologist= new Quackologist();
+        flockOfDucks.registerObserver(quackologist);
 
-        System.out.println("\nMallard Duck flock Simulation");
-        simulate(flockOfMallardDuck);
+        simulate(flockOfDucks);
 
         System.out.println("The ducks quack " + QuackCount.getQuackCount() + " times.");
     }
