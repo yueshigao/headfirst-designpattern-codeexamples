@@ -5,10 +5,11 @@ import J_compositepattern.b_compositeNode.iterator.CompositeIterator;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 public class Menu extends MenuComponent {
 
-    ArrayList menuComponents = new ArrayList();
+    List<MenuComponent> menuComponents = new ArrayList();
 
     String name;
     String description;
@@ -50,11 +51,20 @@ public class Menu extends MenuComponent {
         System.out.println(", " + getDescription());
         System.out.println("---------------------------");
 
-        Iterator iterator = menuComponents.iterator();
+        /**V1: steam(), java 8*/
+        menuComponents.stream().forEach(MenuComponent::print);
+
+        /**V2: for each, java 5
+        for (MenuComponent menuComponent : menuComponents) {
+            menuComponent.print();
+        }*/
+
+        /**V3: Iterator
+         * Iterator iterator = menuComponents.iterator();
         while(iterator.hasNext()) {
             MenuComponent menuComponent = (MenuComponent) iterator.next();
             menuComponent.print();
-        }
+        }*/
     }
 
     @Override
