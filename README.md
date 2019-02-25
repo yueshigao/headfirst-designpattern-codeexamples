@@ -1,6 +1,6 @@
 # Code Examples in Head First Design Pattern
 
-I've written them for my better understanding of the book and I've modified some of them for the same reason. If you hava any questions, don't not hesitate to leave a comment.
+I've written them for my better understanding of the book and I've modified some of them for the same reason. If you have any questions, don't not hesitate to leave me comments.
  
 1. A_strategyPattern
 2. B_observatorPattern	
